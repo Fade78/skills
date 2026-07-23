@@ -18,7 +18,7 @@ description: >
 metadata:
   tags: creative-writing, poetry, japanese, haiku, cross-cultural
   date: 2026-07-23
-  version: "1.1.5"
+  version: "1.2.0"
   use_case: "Compose or critique haiku in the user's own language and culture, grounded in verified scholarship rather than the 5-7-5 stereotype."
 ---
 
@@ -150,6 +150,20 @@ print tradition; one horizontal line digitally) — the 5-7-5 lives in the
 morae, not in line breaks. Monostich, the Brazilian four-line coda, or
 other layouts: on request or per the user's tradition (§5.3). Right-to-left
 scripts flow normally; the line break still carries the cut.
+
+### 3.4 Style modes stacking with this skill
+
+When a compression or persona mode (caveman-style, telegraphic, "fewer
+tokens") is active in the conversation, it governs the **commentary around
+the poem — never the poem's own register**. Inside the poem, apply only the
+devices this skill itself licenses: dropped articles, short lines, a
+one-word closing verdict. Abbreviations ("msg", clipped words), UI
+shorthand, and symbols standing in for words are leaks, not style — they
+break the poem's breath. Exception: interface-language or SMS register as a
+**deliberate, user-confirmed choice** is legitimate (senryū-adjacent,
+gendai-compatible) — offer it as a labeled variant, never as the default.
+A shorthand arrow as the single cut mark is a borderline, playful marked
+choice: acceptable when flagged as such, never by reflex.
 
 ## 4. The cut
 
@@ -466,6 +480,8 @@ validating a haiku, verify:
 - [ ] **Zero emojis** or decorative symbols?
 - [ ] Punctuation minimal and deliberate — at most one cut mark, none by
       default (§3.2)?
+- [ ] Full words — no abbreviations or shorthand, unless the user chose
+      that register (§3.4)?
 - [ ] Short for that language (§2 targets) — never padded to a count?
 - [ ] One **concrete** image (seen, heard, touched — or imagined to that
       precision)?
@@ -483,6 +499,9 @@ validating a haiku, verify:
 - [ ] Read aloud in one breath?
 
 ## 12. Assistant protocols
+
+**Precedence rule:** explicit user instructions on count, format, language,
+commentary, or number of poems override every default in this section.
 
 ### "Is this a haiku?"
 Check against §11 in order: brevity → concrete image → cut → openness.
