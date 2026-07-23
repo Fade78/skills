@@ -18,7 +18,7 @@ description: >
 metadata:
   tags: creative-writing, poetry, japanese, haiku, cross-cultural
   date: 2026-07-23
-  version: "1.1.1"
+  version: "1.1.5"
   use_case: "Compose or critique haiku in the user's own language and culture, grounded in verified scholarship rather than the 5-7-5 stereotype."
 ---
 
@@ -173,8 +173,8 @@ This section governs all cross-cultural decisions. The verified
 1. **The cut / juxtaposition** — travels everywhere, almost without loss.
 2. **Brevity-compression** — travels well; only the counting unit changes.
 3. **Aesthetic principles** (sabi, karumi, wabi...) — travel with
-   substitution of the spiritual ground (documented: Christian tradition in
-   Slovak haiku, jazz and Black oral tradition in African-American haiku).
+   substitution of the spiritual ground (documented: jazz and Black oral
+   tradition in African-American haiku).
 4. **Formal counts** — cost varies with the language's morphology
    (prohibitive in highly inflectional languages such as Albanian).
 5. **The kigo as a system** — does not travel, except through deliberate,
@@ -223,9 +223,12 @@ If the user works within a specific tradition, follow it rather than the
 international default:
 
 - **Brazil**: the classical *haicai* of Guilherme de Almeida rhymes
-  (lines 1-3, plus an internal rhyme in line 2); Olga Savary's four-line coda
-  also exists. "Haiku never rhymes" is the international default, not a law.
-- **Slovak practice** likewise uses rhyme and sound-play as a resource.
+  (line 1 with line 3, plus an internal rhyme between the 2nd and 7th
+  syllables of line 2) and often carries a title. Olga Savary's occasional
+  four-line coda is her own declared innovation ("a coda, as in music").
+  "Haiku never rhymes" and "no title" are the international default, not a law.
+- **Slovak practice** uses sound-play (alliteration, assonance) as a
+  documented resource.
 - **Strict 5-7-5 schools** (scholastic, some associations): comply (see §2).
 - **One-line haiku** (monostich, defended notably by Hiroaki Sato) and other
   layouts: legitimate variants on request.
@@ -507,8 +510,7 @@ let them choose.
 - **Strict 5-7-5 demanded** → comply well, note the denser alternative once,
   drop it (§2).
 - **"Zen haiku"** → treat as tone (§6).
-- **A claimed national tradition** (Brazilian rhymed haicai, monostich,
-  4-line coda...) → follow it (§5.3).
+- **A claimed national tradition** (Brazilian rhymed haicai, monostich, 4-line coda...) → follow it (§5.3).
 - **Southern-hemisphere or tropical user** → transpose or drop the season
   (§5.2); never ship a Japan-calendar kigo by default.
 
@@ -525,18 +527,12 @@ let them choose.
 
 ## Provenance
 
-Rebuilt in 2026 on a verified, multi-source study: Haruo Shirane ("Beyond the
-Haiku Moment", *Modern Haiku* 2000, read in full; *Traces of Dreams*,
-Stanford UP 1998), the Haiku Society of America's revised 2026 definitions
-(primary source), Higginson's metrical research (*Haiku Handbook* 1985;
-*Haiku World* 1996), the World Kigo Database and regional saijiki projects
-(Kenya, Australia, Taiwan), the francophone history (Couchoud 1905, AFH), Paz
-on the Hispanic tradition, and an academic cross-cultural corpus of 15
-studies (2000-2026) covering ten-plus language traditions. Corrections made
-against v0.1: the word order of Buson's rapeseed haiku; the frog haiku's
-exact 5-7-5 status in Japanese; the attribution of the "pine" teaching
-(recorded by Dohō); internally consistent case-study counts; the culture
-module, the transferability hierarchy, the vertical axis, and the tiered
-beginner/advanced rules are new. v1.1 adds §3
-(rendering: native script, one script per poem, emoji ban, punctuation-last
-cut) after field-testing outputs from lightweight models.
+Grounded in a 2026 multi-source study; every cultural and historical claim
+is traced to primary or scholarly sources: Haruo Shirane ("Beyond the Haiku
+Moment", *Modern Haiku* 2000; *Traces of Dreams*, Stanford UP 1998); the
+Haiku Society of America's revised 2026 definitions; Higginson's metrical
+research (*Haiku Handbook* 1985; *Haiku World* 1996); the World Kigo
+Database and regional saijiki projects (Kenya, Australia, Taiwan); the
+francophone history (Couchoud 1905, AFH); Paz on the Hispanic tradition;
+Almeida's and Savary's own texts for Brazil; and a verified academic corpus
+of fifteen cross-cultural studies (2000-2026).
