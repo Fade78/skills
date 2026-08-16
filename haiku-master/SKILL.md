@@ -1,25 +1,19 @@
 ---
 name: haiku-master
 description: >
-  Compose, improve, or judge haiku at a professional level — far beyond the
-  schoolroom 5-7-5 cliché. Use this skill whenever the user asks for a haiku,
-  a short Japanese-style poem, mentions 5-7-5, submits a three-line text to be
-  evaluated, or wants a very short poem on a theme; also when they confuse
-  haiku with senryū, tanka, or aphorism. High quality and trustworthy:
-  rebuilt in 2026 on a serious, verified, scientific and multicultural
-  study — Haruo Shirane's scholarship, the Haiku Society of America's revised
-  2026 definitions, Higginson's metrical research, and an academic
-  cross-cultural corpus spanning a dozen language traditions (English,
-  French, Spanish, Portuguese, Vietnamese, Indonesian, Albanian, Slovak,
-  Taiwanese, African-American, and Japan's own free-form lineage). It encodes
-  what actually transfers between cultures and what does not. CRITICAL:
-  always compose the haiku in the user's own language and script, and
-  anchor any season in the user's climate and cultural calendar, not Japan's.
+  Compose, improve, or judge haiku at a professional level beyond the
+  schoolroom 5-7-5 cliché. Use this skill for haiku, short Japanese-style or
+  three-line poems, 5-7-5 requests, and haiku-like texts submitted for review;
+  also for senryū, protest haiku, haiga, rengay, and advanced traditions such
+  as Japanese gendai, French war haiku, Brazilian rhymed haicai, Taiwanese
+  灣俳, and African-American haiku. Activate when the user asks for a very
+  short poem on a theme or confuses haiku with senryū, tanka, aphorism, or
+  another neighbouring form.
 metadata:
   tags: creative-writing, poetry, japanese, haiku, cross-cultural
-  date: 2026-07-23
-  version: "1.2.0"
-  use_case: "Compose or critique haiku in the user's own language and culture, grounded in verified scholarship rather than the 5-7-5 stereotype."
+  date: "2026-08-16"
+  version: "1.7.1"
+  use_case: "Compose or critique haiku and related short forms across languages, traditions, and cultures."
 ---
 
 # Haiku Master
@@ -27,11 +21,34 @@ metadata:
 ## 0. Activation, scope, and the language rule
 
 Activate when the user asks for a haiku, a short Japanese-style poem, a very
-short poem on a theme, mentions 5-7-5, or submits a short text to be judged or
-improved. Clarify gently (without forcing the haiku) when they confuse haiku
-with aphorism, tanka, senryū, or couplet. Do **not** activate if the user
-explicitly wants another genre (sonnet, tanka, haibun...) — follow their
-intent.
+short poem on a theme, mentions 5-7-5, or submits a three-line or haiku-like
+short poem to be judged or improved. Clarify gently (without forcing the
+haiku) when they confuse haiku with aphorism, tanka, senryū, or couplet.
+
+*Example: if the user says "write me a 5-7-5 haiku about love," respond:
+"A 5-7-5 syllable count is optional — the real essence is compression, cut,
+and concrete imagery. Shall I compose one for you?"*
+
+**Senryū note:** if the user explicitly asks for a senryū, do **not**
+deactivate — activate and use §7 and §8.7 for composition or judgment;
+§11 case 3 illustrates one senryū failure mode (same form, different intent).
+
+Do **not** activate for another genre explicitly requested (sonnet,
+tanka, haibun...), except senryū, which this skill handles as a related form;
+follow the user's intent.
+
+**Rule precedence.** Resolve conflicts in this order: (1) the user's explicit
+instruction; (2) the explicitly chosen cultural tradition or form; (3) the
+selected working mode; (4) this skill's defaults. Preserve the user's
+language, intent, and formal constraint before applying a stylistic preference.
+
+**Additional triggers.** Also activate when the user mentions:
+- protest haiku, social commentary haiku, or activist haiku (§14)
+
+**Mid-conversation genre switch.** If the user starts with a haiku request,
+then says "no, actually a tanka" (or any other genre), immediately
+re-evaluate activation and either deactivate or shift to the new genre.
+Do not hold on to haiku-mode once the user has changed their mind.
 
 **Language rule (critical).** Always compose in the user's own language —
 **and in that language's native script** (§3.1). French user → French haiku;
@@ -41,7 +58,7 @@ request for translation or a specific target language. Analysis and
 commentary follow the language of the conversation.
 
 **Culture rule (critical, new).** A good haiku is culture-relative in
-specific, documented ways (see §5). Never assume the user lives in Japan's
+specific, documented ways (see §8). Never assume the user lives in Japan's
 climate, calendar, or poetic memory.
 
 ## 1. What a haiku actually is
@@ -60,7 +77,8 @@ cutting word (*kireji*) — and a social function (greeting the host, often by
 buried allegory). Masaoka Shiki detached it from the chain in the 1890s and
 named the autonomous form *haiku*.
 
-Reference definition (Haiku Society of America, revised 2026, paraphrased):
+Contemporary working definition, consistent with English-language haiku
+scholarship and current HSA usage:
 a short poem in imagistic language conveying the essence of an experience of
 nature or the season, intuitively linked to the human condition, in which a
 **cut** suggests a meaningful relationship between two or more images,
@@ -69,25 +87,30 @@ count, any mandatory season word.
 
 **On 5-7-5.** The Japanese original counts 17 *on* (morae), units shorter
 and more regular than Western syllables (*Tō-kyō* = 2 syllables but 4 morae).
-17 on ≈ 10-14 Western syllables. A literal Western 5-7-5 is therefore ~40 %
-heavier than the Japanese form. Even Japan has a recognized free-form lineage
+17 on ≈ 10-14 Western syllables. A literal Western 5-7-5 is often
+substantially longer and heavier than the Japanese form. Even Japan has a recognized free-form lineage
 (*jiyūritsu*: Hōsai, Santōka) beside the fixed form (*teikei*). And the
 three-line layout is itself a Western translation convention — Japanese haiku
 are written in a single vertical column. Conclusion: 5-7-5 is one legitimate
 exercise among others, never the definition.
 
+**Japanese counting pattern.** For strict Japanese work, count morae, not
+syllables or kanji: a long vowel counts as two morae, ん counts as one, small
+っ counts as one, and a contracted sound such as きょ counts as one. Verify
+the spoken reading; do not count written characters.
+
 ## 2. The formal target (what to actually write)
 
 Default deliverable, in any Western language: **three short lines,
-short–long–short, sayable in one breath, denser than 5-7-5, no title, with a
+short–long–short, with a coherent rhythm, denser than 5-7-5, no title, with a
 cut**. Then adjust to the language:
 
 | Language | Working unit | Practical target | Notes |
 |---|---|---|---|
 | English | stressed accents | ~7-12 syllables, or 2-3-2 accents | English ears count accents, not syllables (Higginson) |
-| French | syllables | ~9-14 syllables over 3 lines | free since Couchoud (1905); settle the mute *e* by reading aloud, not by rule |
+| French | syllables | ~9-14 syllables over 3 lines | counted and freer tercets have coexisted since early adaptations such as Couchoud (1905); settle the mute *e* by reading aloud, not by rule |
 | Spanish | metrical syllables | ~11-15 | classical count applies *sinalefa* and final-stress adjustments; naive counters get it wrong |
-| Portuguese (BR) | syllables | like Spanish | the rhymed Almeida lineage is a legitimate tradition — see §5.3 |
+| Portuguese (BR) | syllables | like Spanish | the rhymed Almeida lineage is a legitimate tradition — see §8.3 |
 | Japanese | morae (*on*) | 17 on (5-7-5) or free form | kireji particles available |
 | any other | that language's prosody | shorter than a literal 5-7-5 | recreate compression with the language's own means |
 
@@ -113,15 +136,16 @@ simplified/traditional), mirror the register the user writes in.
 
 **One script per poem.** Never drop kanji, kana, or any foreign characters
 into a Latin-script haiku (nor the reverse): script-mixing is the
-typographic form of the pseudo-oriental trap (§9, case 4) — it decorates
+typographic form of the pseudo-oriental trap (§11, case 4) — it decorates
 instead of showing. If the user explicitly wants a bilingual result, give
 two complete versions side by side, never a hybrid.
 
-**No emojis, no decorative symbols, ever.** An emoji is a caption pasted
+**No emojis or decorative symbols by default.** An emoji is a caption pasted
 under the poem: it re-states an image the words already carry and kills the
-silence the form depends on. No haiku tradition in any language admits
-pictograms. An emoji season marker (a falling leaf, a snowflake) is not a kigo — the season lives in the
-words or nowhere.
+silence the form depends on. A falling-leaf or snowflake emoji is not a kigo —
+the season lives in the words or is absent. Functional symbols are allowed
+only as an explicitly marked, deliberate experiment; they are never the
+standard presentation.
 
 ### 3.2 Punctuation
 
@@ -136,8 +160,9 @@ into three juxtaposed statements instead of two planes in tension.
 
 Case conventions are language-bound, not universal: the all-lowercase,
 no-final-period poem is an English-language norm, common in French, and
-**impossible in German** (nouns capitalize); follow the user's register.
-In Japanese output, use no Western punctuation at all — the kireji
+nonstandard in ordinary German orthography (nouns capitalize); follow the user's register.
+For classical-style Japanese output, avoid imported Western punctuation —
+the kireji
 particles (ya, kana, keri) and the character flow do the cutting; a dash
 pasted into a Japanese haiku is a Western artifact.
 
@@ -148,7 +173,7 @@ before or after the poem block — no signature, no emoji line, no inline
 commentary. Japanese default: a **single line** (a vertical column in
 print tradition; one horizontal line digitally) — the 5-7-5 lives in the
 morae, not in line breaks. Monostich, the Brazilian four-line coda, or
-other layouts: on request or per the user's tradition (§5.3). Right-to-left
+other layouts: on request or per the user's tradition (§8.3). Right-to-left
 scripts flow normally; the line break still carries the cut.
 
 ### 3.4 Style modes stacking with this skill
@@ -179,7 +204,152 @@ of preference, per §3.2 — with:
 Craft rule: two images, a space between them; do not explain their relation —
 the reader completes it. The cut creates a shift, not a punchline.
 
-## 5. Season and culture — what transfers, what does not
+**Kire and kireji.** *Kire* is the poetic effect of cutting, turning, or
+suspending perception. *Kireji* is a Japanese grammatical or phonological
+cutting word that may produce that effect. They are not interchangeable: a
+poem can have kire without a named kireji, and a kireji does not guarantee a
+successful cut. In translation, reproduce the function—pause, suspension,
+emphasis, or closure—not necessarily the Japanese particle.
+
+**Toriawase.** Test the image pairing as *toriawase* (取り合わせ): the two
+elements should be neither redundant nor randomly unrelated. Ask what becomes
+visible only when the reader holds them together. Shared atmosphere is not
+enough; the pairing should create pressure, resonance, contrast, or a new
+perception.
+
+**Exception: *ichibutsujitate* ("one-thing" haiku).** A critical category
+sometimes used for a single flowing perception — found in work by Bashō,
+Buson, and Issa — consisting
+of a single sentence or a single flowing perception without a marked cut.
+The juxtaposition is subtle, often syntactic rather than structural. Do not
+reject a haiku solely for lacking an explicit cut; apply the full checklist
+(§7) and consider whether compression and a single image carry the weight
+instead.
+
+## 5. Five-step composition method
+
+1. **Observe (or imagine precisely).** What is seen, heard, touched? What
+   detail stops you? An imagined scene must be imagined to the same sensory
+   precision as an observed one.
+2. **Pick a core.** One strong image; one sharp sensation; a season element
+   if it fits the user's climate/calendar (§8.2) — otherwise none.
+3. **Create the cut.** An opposition, a shift of perception, a quiet tension
+   between two elements (§4). Consider one vertical-axis resonance (§8.4)
+   for advanced work.
+4. **Cut the superfluous.** Explanations, morals, conclusions, stacked
+   adjectives, pretty words; articles when they weigh the line down.
+5. **Read aloud.** Check flow, density, sound, and the effect of silence — in
+   the user's language. “One breath” is a useful default for many short
+   Western-language haiku, not an absolute test; deliberate interruption,
+   performance, or visual pacing may be part of the chosen mode.
+
+**Revision diagnostics.** Seek one or two discriminating particulars, not a
+catalogue of sensory details. A specific detail cannot be replaced by a
+generic synonym without loss. Audit the verbs: does something occur, enter,
+recede, break, remain, or become newly visible? If the poem is intentionally
+still, stage the stillness materially rather than merely asserting it. Audit
+sound separately from syllable count—stress, duration, consonant clusters,
+vowel echoes, repeated phonemes—and audit grammar so that tense, aspect,
+articles, and prepositions support rather than explain away the cut.
+
+## 6. Assistant protocols
+
+**Precedence rule:** explicit user instructions on count, format, language,
+commentary, or number of poems override every default in this section.
+
+### "Is this a haiku?"
+Use this four-stage critique pattern:
+1. describe what the poem literally presents;
+2. identify its mechanism—cut, rhythm, season, voice, or image relation;
+3. describe the readerly effect and where it weakens;
+4. propose the smallest revision that tests the diagnosis.
+Do not begin by classifying the poem or replacing it with the critic's
+preferred poem.
+
+Check against §7 in order: brevity → concrete image → cut (or
+ichibutsujitate compression, §4) → openness.
+Answer plainly: successful haiku / formally correct but weak (say why, one
+cause) / not a haiku but an aphorism, tanka, senryū... Never grade on 5-7-5
+compliance unless the user's stated frame is 5-7-5.
+
+### "Write me a haiku"
+- Offer **2 or 3 variants** when useful. Keep each poem in a clean poem block;
+  place any one-line explanation outside the block, naming its cut, season
+  anchor, or degree of boldness.
+- Start from a concrete image the user gives; if they give only an abstract
+  theme, ask for — or propose — one concrete scene first.
+- Select a working mode when the request is underspecified: beginner shasei,
+  contemporary free-form haiku, strict Japanese-form imitation, senryū,
+  experimental/gendai, or culturally specific adaptation. State the mode only
+  when it changes expectations or evaluation criteria.
+- Apply beginner defaults by default; unlock advanced tools (§9) when the
+  user shows ambition or asks for depth.
+- If season matters and the user's hemisphere/climate is unknown, ask one
+  short question or stay season-neutral.
+
+### "Fix my haiku"
+First identify the user's non-negotiable element: scene, emotional temperature,
+cultural reference, joke, political charge, or formal constraint. Preserve it
+unless the user asks for reinvention. Offer a minimally invasive revision
+before a freer rewrite.
+
+Keep the strongest image; remove commentary, moral, forced punchline;
+strengthen the silence; lighten the language. If the corrected version drifts
+far from the original, also give a version closer to the user's intent and
+let them choose.
+
+### Special requests
+- **Translation or bilingual request** → decide which priority governs:
+  literal scene, rhythm, cut, cultural association, or voice. Preserve the
+  image relation and ambiguity where possible, but do not pad the target
+  language to preserve Japanese mora count. Give a natural version first;
+  explain lost cultural resonance separately.
+- **"Explain haiku to me"** → use §1-2 as your core: define the cut and
+  compression, explain 5-7-5 honestly (school convention vs. real density),
+  show one concrete example (Bashō's frog or a contemporary one), and offer
+  to write one together. Adapt the depth to the user's age and context
+  (pupil → simpler; adult writer → more nuance).
+- **Strict 5-7-5 demanded** → comply well, note the denser alternative once,
+  drop it (§2).
+- **"Zen haiku"** → treat as tone (§9).
+- **A claimed national tradition** (Brazilian rhymed haicai, monostich,
+  African-American haiku, Taiwanese 灣俳, Albanian haiku...) → follow the
+  relevant subsection (§8.3, §8.8, §8.9).
+- **Southern-hemisphere or tropical user** → transpose or drop the season
+  (§8.2); never ship a Japan-calendar kigo by default.
+
+## 7. Canonical checklist (the single normative list)
+
+This list is the norm; every other section explains it. Before delivering or
+validating a haiku, verify:
+
+- [ ] Written in the **user's own language**?
+- [ ] In that language's **native script** — no romaji to a Japanese user,
+      no foreign characters mixed in (§3.1)?
+- [ ] **Zero emojis** or decorative symbols?
+- [ ] Punctuation minimal and deliberate — at most one cut mark, none by
+      default (§3.2)?
+- [ ] Full words — no abbreviations or shorthand, unless the user chose
+      that register (§3.4)?
+- [ ] Short for that language (§2 targets) — never padded to a count?
+- [ ] One **concrete** image (seen, heard, touched — or imagined to that
+      precision)?
+- [ ] A real **cut** (two planes in tension, not merely related images) —
+      unless the poem uses *ichibutsujitate* (one-thing technique, §4), in which case compression
+      and a single sustained image carry the weight instead?
+- [ ] Room for **silence** — the poem works without being explained?
+- [ ] No moral, no conclusion, no displayed metaphor or simile?
+- [ ] Adjectives audited — each one changes the image or goes?
+- [ ] Season (if any) anchored in the **user's climate and cultural
+      calendar** — or honestly absent?
+- [ ] No pasted Japanese props (zen, torii, sakura...) unless the scene is
+      actually Japanese?
+- [ ] No title; no rhyme — **unless** the user's tradition or request says
+      otherwise (§8.3, §2)?
+- [ ] If the humor targets the human comedy: labeled senryū, honestly?
+- [ ] Read aloud with a coherent rhythm for its language and chosen mode?
+
+## 8. Season and culture — what transfers, what does not
 
 This section governs all cross-cultural decisions. The verified
 **transferability hierarchy**, from most to least portable:
@@ -199,7 +369,7 @@ Quality rule derived from it: successful adaptations **recreate the
 functions** (compression, juxtaposition, seizing the instant) with the target
 culture's own means; they never mechanically replicate Japanese surface forms.
 
-### 5.1 What a kigo really is
+### 8.1 What a kigo really is
 
 In Japan the kigo is not a mere season hint: it is a **codified system**
 (almanacs called *saijiki*) where each word carries a fixed season and a
@@ -210,7 +380,7 @@ autumn; **migrating birds** = autumn only (their spring departure is not a
 kigo); even the **refrigerator** = summer. None of this is guessable — and
 none of it is valid outside Japan.
 
-### 5.2 Anchoring the season for a non-Japanese user
+### 8.2 Anchoring the season for a non-Japanese user
 
 - **Never apply Japanese default associations** (moon→autumn etc.) to a
   non-Japanese reader.
@@ -227,11 +397,22 @@ none of it is valid outside Japan.
 - **Omitting the season entirely (*muki* haiku) is legitimate** — recognized
   in Japan itself and standard in world haiku.
 
+**Terminology.** Distinguish *kigo*, a season word within a codified poetic
+system, from *kidai*, a seasonal topic or subject, and *muki*, a poem without a
+seasonal reference. A local seasonal image may be a useful *kidai* without
+being an established *kigo*.
+
+**Cultural validation.** Do not invent a local *saijiki* from climate facts
+alone. When a seasonal association is culturally specific, validate it through
+local usage, published regional practice, or the user's own knowledge. Do not
+flatten Indigenous or local calendars into a generic four-season or wet/dry
+model.
+
 Operational rule: anchor the season in the **user's** climate and cultural
 calendar, or omit it. When the user's location or hemisphere is unknown and
 the season matters, ask one short question or write season-neutral.
 
-### 5.3 National traditions to respect
+### 8.3 National traditions to respect
 
 If the user works within a specific tradition, follow it rather than the
 international default:
@@ -243,11 +424,21 @@ international default:
   "Haiku never rhymes" and "no title" are the international default, not a law.
 - **Slovak practice** uses sound-play (alliteration, assonance) as a
   documented resource.
+- **Albanian haiku**: a young tradition (emerging c. 2001). Syllable
+  counting is difficult in this highly inflectional language (§8,
+  transferability hierarchy, item 4); poets such as Agim Vinca and Stavri S.
+  Çipi favour free rhythm, rural themes, and border / migration imagery.
+- **Việt Haiku (proposed 6-4-4)**: an experimental hybrid that grafts
+  rhymes and a 6-4-4 pattern from Vietnamese *lục bát* onto the three-line
+  frame, admitting love and sex as overt themes. This is **not haiku**
+  but a distinct hybrid (§8.7). Most Vietnamese haiku in practice use free
+  rhythm, no rhyme, and a localised kigo — those can be considered haiku if
+  they preserve the cut and compression.
 - **Strict 5-7-5 schools** (scholastic, some associations): comply (see §2).
 - **One-line haiku** (monostich, defended notably by Hiroaki Sato) and other
   layouts: legitimate variants on request.
 
-### 5.4 Depth without a saijiki: the vertical axis
+### 8.4 Depth without a saijiki: the vertical axis
 
 Shirane's key concept. Japanese haiku works on two axes: **horizontal** (the
 present moment, observation) and **vertical** (history, prior poems, cultural
@@ -262,7 +453,169 @@ As an assistant you know the corpora: the vertical axis is your strongest
 lever for depth. Use it subtly, never as name-dropping, and with references
 the user can plausibly own.
 
-## 6. Beginner rules, advanced allowances — and three corrected myths
+### 8.5 Haiga — haiku and visual art
+
+Haiga (俳画) is the combination of a haiku (or senryū) with a visual image
+— traditionally brush painting and calligraphy on paper or silk; today also
+photography, collage, and digital art. The form was practised by all the great
+masters: Bashō, Buson (the most accomplished painter among them), Issa, and
+Shiki all created haiga.
+
+**Core principle:** the image must **not** illustrate the poem, nor the poem
+caption the image. Instead they should create a productive **leap** or
+disjunction — the meaning emerges from the gap between word and picture, just
+as a haiku's cut creates meaning between two images.
+
+**Contemporary practice:** photo-haiga (photography + haiku) is now the most
+common form outside Japan, with dedicated journals (*Haigaonline*,
+*DailyHaiga*) and the annual Jane Reichhold Memorial Haiga Competition. The
+Haiku Foundation regularly publishes haiga galleries. Modern haiga can be
+digital (photo editing, collage) or traditional (ink and brush — still very
+much alive in Japan).
+
+**Operational rule:** when a user asks for a haiga, deliver the poem and
+describe the visual element in text. If the platform allows image generation,
+the artwork should be minimalist, leave space around the poem, and never
+duplicate what the words already say. Apply the presentation rules in §3.1 and §7; do not add decorative clip-art.
+
+### 8.6 Rengay — the Western collaborative linked poem
+
+**Rengay** (a portmanteau of *renga* + Gay, its inventor) is typically a
+six-verse collaborative linked poem invented in August 1992 by Californian poet Garry
+Gay. It was created as a Western-friendly alternative to the more rule-bound Japanese
+renku: shorter, usually thematic, and without renku's full set of positional
+rules for moon, flowers, and season shifts.
+
+**Structure for two poets (A and B):**
+
+| Verse | Poet | Lines |
+|---|---|---|
+| 1 | A | 3 (haiku) |
+| 2 | B | 2 (haiku-like) |
+| 3 | A | 3 (haiku) |
+| 4 | B | 3 (haiku) |
+| 5 | A | 2 (haiku-like) |
+| 6 | B | 3 (haiku) |
+
+**Structure for three poets (A, B, C):**
+A-3, B-2, C-3, A-2, B-3, C-2
+
+**Key rules:**
+- Each verse must stand alone as a haiku or haiku-like poem
+- All six verses develop a **single shared theme** (this is what distinguishes
+  rengay from renku, which deliberately avoids thematic unity)
+- Linking can be direct (echoing the previous verse) or associative
+- Solo rengay (one poet writing all six verses in two voices) is also accepted
+- The Haiku Society of America (HSA) and Haiku Poets of Northern California
+  (HPNC) have sponsored rengay competitions
+
+**Operational rule:** when a user asks for a rengay, first confirm whether
+they are writing solo or with partners. If solo, write all six verses yourself
+in two alternating voices. The title should be a word or phrase from the poem,
+never a separate label.
+
+### 8.7 Related forms at a glance
+
+Users often confuse haiku with neighbouring forms. The following table
+clarifies each:
+
+| Form | Structure | Focus | Notes |
+|---|---|---|---|
+| **Haiku** | 3 lines, short–long–short, ~10-14 syll. | Instant, perception, cut | No title, no rhyme, no metaphor displayed |
+| **Senryū** | Same as haiku | Human comedy, irony, satire | Same form, different intent — no kigo required |
+| **Tanka** | 5 lines (5-7-5-7-7) | Emotion, relationships, subjectivity | Older than haiku; allows metaphor and personal voice |
+| **Haibun** | Prose paragraph(s) + 1+ haiku | Travel, memoir, meditation | Titled; the prose does not explain the poem |
+| **Haiga** | Haiku + visual image (painted/photo) | Harmony or disjunction word/image | Image must not illustrate; poem must not caption |
+| **Renku** | Variable-length linked verses, often alternating long and short links | Collaborative, non-linear | Positional conventions (moon, flowers, seasons) vary by form |
+| **Rengay** | 6 verses, alternating 3/2/3/3/2/3 | Collaborative, single theme | Invented 1992 by Garry Gay (see §8.6) |
+| **Gogyōka** | 5 free-form lines | Any subject | Contemporary Japanese, no syllable count |
+| **Sijo** | 3 lines of 14-16 syllables each | Korean; twist in line 3 | Narrative: problem → development → resolution |
+| **Kimo** | 3 lines (10-7-6 syllables) | Any subject | Israeli adaptation of haiku |
+| **Cherita** | 3 stanzas (1-2-3 lines) | Mini-story | Modern form by Ai Li and others |
+| **Việt Haiku** | 3 lines (6-4-4), often rhymed | Love, nature, everyday life | Hybrid: lục bát + haiku frame; not haiku proper (§8.3) |
+
+**Haiku–senryū spectrum.** Treat the boundary as overlapping tendencies,
+not absolute boxes. Ask which element dominates—seasonal or natural
+perception, human comedy, social critique, or autobiographical voice. When
+useful, label the result descriptively: “haiku with senryū energy,” “senryū,”
+or “haiku-like short poem.”
+
+### 8.8 African-American haiku
+
+African-American poets have developed a distinctive body of haiku and related
+short poetry in English. The following five figures illustrate important
+strands, not a complete canon:
+
+- **Richard Wright (1908‑1960)** wrote approximately 4,000 haiku in the last
+  18 months of his life, published posthumously as *Haiku: This Other World*
+  (1998). Formally hewing close to the three-line, cut-based model, his
+  work fuses Japanese aesthetic principles (sabi, mono no aware) with the
+  tonal inflections of the blues.
+- **James Emanuel (1921‑2013)** published *Jazz from the Haiku King* (1999),
+  explicitly merging haiku with jazz rhythm — syncopation, improvisation,
+  the swung note applied to the three-line frame.
+- **Etheridge Knight (1931‑1991)** wrote terse, urban haiku and senryū that
+  use the rhythms of Black vernacular speech. His work leans toward senryū
+  territory (irony, street wisdom).
+- **Sonia Sanchez (b. 1934)** is the most formally radical. Her haiku
+  sequences (*Morning Haiku*, *Like the Singing Coming Off of Drums*)
+  routinely break the conventions: multiple images where one would do,
+  explicit political content (MOVE bombing 1985, Soweto, Harriet Tubman),
+  and a personal voice that refuses the Zen tradition of self-effacement.
+  Scholarship recognises her work as an intentional new hybrid — "black
+  aesthetic" merged with haiku — that sometimes crosses into three-line
+  poetry proper.
+- **Lenard D. Moore (b. 1958)** is the most classically grounded of the
+  five. The first African-American president of the Haiku Society of
+  America, his haiku maintain the cut, seasonal reference, and compression
+  while drawing on Black cultural memory.
+
+**Conceptually new in this tradition:**
+
+| Element | What it means for haiku |
+|---|---|
+| **Jazz / blues rhythm** | Syncopation, improvisation, swung phrasing — applied to the three-line breath unit, not to syllable count |
+| ***Ubuntu* principle** | In some readings, interconnectedness among living people, ancestors, and the unborn provides a different spiritual ground from Western Zen framings |
+| **Political season** | In some of Sanchez's work, political markers can function alongside or instead of conventional kigo |
+| **Orality and call-and-response** | Knight and Sanchez use Black vernacular patterns that invite performance, not silent contemplation |
+| **Healing as function** | Some haiku of witness use compression for collective memory, testimony, or healing |
+
+**Operational rule:** when a user identifies as African-American or requests
+haiku in a Black aesthetic register, the Wright-to-Moore spectrum is
+available. Offer Sanchez's radical variants only if the user signals
+political or experimental intent — she is the exception, not the norm.
+
+### 8.9 Taiwanese haiku (灣俳)
+
+Taiwan has developed two complementary strands:
+
+- **Huang Lingzhi (b. 1928)** spearheaded a systematic *Taiwan Haiku
+  Saijiki*, a particularly systematic local-season-word project outside Japan
+  — already cited in §8 as a model of kigo transferability. His haiku
+  follow the Japanese fixed form (17 on, kigo, cut) but replace Japanese
+  nature with Taiwanese flora, climate, and calendar.
+- **Chen Li (b. 1954)** writes a post-modern, cross-cultural variant in
+  his collection *Microcosmos* (小宇宙). He translates and responds to
+  Latin-American haiku pioneers (Tablada, Paz) and Japanese masters
+  simultaneously, creating a tri-cultural voice: Japanese concision,
+  Latin American surrealism, Taiwanese daily life. His subjects include
+  computer remote controls, mobile phones, and urban Taipei — yet the
+  cut and compression remain intact.
+
+**Conceptually new in this tradition:**
+
+| Element | What it means |
+|---|---|
+| **Post-colonial identity** | Haiku as a vehicle for recovering a suppressed cultural voice after 50 years of Japanese rule |
+| **Saijiki localisation** | A documented working model of localising kigo beyond Japan |
+| **Tri-cultural poetics** | Chen Li brings Japanese, Latin American, and Taiwanese materials into sustained dialogue |
+
+**Operational rule:** when a user writes in Chinese from Taiwan, or
+references Taiwanese nature / climate, default to the Huang Lingzhi model
+(local saijiki). When the user signals modernity, urban life, or
+cross-cultural play, offer the Chen Li register.
+
+## 9. Beginner rules, advanced allowances — and three corrected myths
 
 The classic Western teaching triad — direct observation only, no metaphor,
 nature only — is historically a **modern construction** (Shiki's *shasei*
@@ -280,8 +633,26 @@ West as "typically Japanese"). Scholarship on Bashō and Buson shows:
   the peony = the guest leaving his host). What haiku rejects is the
   *displayed* metaphor — the explanatory "like", the announced symbol.
 - **Non-nature subjects are legitimate.** Haikai was born urban and
-  anti-classical; French haiku began with Vocance's 1916 trench-war haiku;
-  modern Japanese *gendai* haiku ranges far beyond nature.
+  anti-classical; French haiku — introduced through early adaptations such as Couchoud's *Au fil de l'eau* (1905), then expanded by Vocance's trench-war haiku (1916) —
+  ranges far beyond nature. Modern Japanese *gendai* haiku likewise ranges
+  far beyond nature.
+
+### 9.1 A note on gendai haiku (現代俳句)
+
+The term covers the progressive movement that split from the conservative
+*Hototogisu* school (led by Takahama Kyoshi) in the early 20th century. The
+*New Rising Haiku* (*shinkō haiku undō*) of the 1920s-30s championed free
+rhythm, non-seasonal subjects, and social realism — and was persecuted by
+the wartime fascist government for its anti-militarist stance. Poets like
+Saitō Sanki ("a machine gun / in the forehead / the killing flower blooms")
+wrote surreal, war-haunted verse. After WWII the movement evolved into
+postwar *gendai*, which embraces everything from classical 5-7-5 with ironic
+kigo to free-verse surrealism. In 2004 the Modern Haiku Association published
+the *Muki Saijiki* (5 volumes), a season-word compendium that includes
+a dedicated "no-season" volume — recognising *muki* haiku as a legitimate
+category within Japan itself. Gendai is not a single style: it is the
+recognition that haiku can be modernist, avant-garde, personal, urban,
+and still be haiku.
 - **"Zen" is a reception frame, not the essence.** The Zen reading came to
   the West through Blyth, Suzuki, Watts and the Beats; it helped haiku
   universalize but is not its poetics. If a user asks for a "zen haiku",
@@ -295,7 +666,7 @@ showing ambition, or on request, unlock the advanced tools: imagined and
 historical scenes, buried metaphor, the vertical axis. Never present the
 beginner defaults as the definition of the genre.
 
-## 7. The masters — corrected, operational
+## 10. The masters — corrected, operational
 
 ### Bashō (1644-1694)
 Master of *haikai* — the art of linkage — as much as of the single verse.
@@ -328,27 +699,14 @@ Modernizer: named the autonomous *haiku*, condemned linked verse, founded
 *shasei* ("sketch from life") under direct Western realist influence.
 Operational: write what you see; go outside first; distrust literary turns.
 Frame these as what they are — the rules of one dominant, fertile school and
-the right **beginner defaults** (§6), not the definition of the genre.
+the right **beginner defaults** (§9), not the definition of the genre.
 
-## 8. Five-step composition method
+## 11. Improving a failed haiku — case studies
 
-1. **Observe (or imagine precisely).** What is seen, heard, touched? What
-   detail stops you? An imagined scene must be imagined to the same sensory
-   precision as an observed one.
-2. **Pick a core.** One strong image; one sharp sensation; a season element
-   if it fits the user's climate/calendar (§5.2) — otherwise none.
-3. **Create the cut.** An opposition, a shift of perception, a quiet tension
-   between two elements (§4). Consider one vertical-axis resonance (§5.4)
-   for advanced work.
-4. **Cut the superfluous.** Explanations, morals, conclusions, stacked
-   adjectives, pretty words; articles when they weigh the line down.
-5. **Read aloud.** One breath; check flow, density, and the effect of
-   silence — in the user's language.
-
-## 9. Improving a failed haiku — case studies
-
-*(Cases shown in English for illustration; produce corrections in the user's
-own language, and transpose the season to their climate.)*
+**Important:** the cases below are shown in English for illustration. When
+you apply them, transpose the season to the *user's* climate and culture,
+and use haiku in the *user's* language. Do not default to English examples
+when explaining to a non-anglophone user.
 
 ### Case 1 — the disguised thought
 
@@ -431,7 +789,7 @@ the place suggested, never named; humanity instead of exoticism. General
 rule: a haiku in a Western language borrows Japan's **discipline**, never its
 props.
 
-## 10. Famous haiku — corrected readings
+## 12. Famous haiku — corrected readings
 
 ### Bashō — the old pond
 > furuike ya / kawazu tobikomu / mizu no oto
@@ -455,7 +813,7 @@ lit Edo: the flowers that manufacture light stand between the two great
 lights; (4) a probable echo of Chinese poetry (sun sinking west, moon rising
 east). Three of the four layers are culturally invisible to an outside
 reader. This is exactly what does not travel — and why depth abroad must be
-rebuilt on the reader's own memory (§5.4).
+rebuilt on the reader's own memory (§8.4).
 
 ### Issa — the snail
 > little snail, / inch by inch, climb / Mount Fuji
@@ -469,89 +827,83 @@ immense. A haiku can be modest in subject and immense in effect.
 Concrete gesture, concrete sound, concrete place; no stated affect — emotion
 rises from pure coincidence. *Shasei* at its best.
 
-## 11. Canonical checklist (the single normative list)
+### A contemporary Western example — an English haiku
+> dandelion chain
+> I weave myself into the meadow
+> (Joshua St. Claire, HSA Haiku Award 2025, first place)
 
-This list is the norm; every other section explains it. Before delivering or
-validating a haiku, verify:
+Why it works: present tense; one continuous action (weaving) literal and
+figurative; the cut between the object made (chain) and the self-dissolving
+into the meadow; no stated emotion — the reader feels the unravelling of
+self into landscape. A model for how a Western-language haiku can achieve
+depth without Japanese props.
 
-- [ ] Written in the **user's own language**?
-- [ ] In that language's **native script** — no romaji to a Japanese user,
-      no foreign characters mixed in (§3.1)?
-- [ ] **Zero emojis** or decorative symbols?
-- [ ] Punctuation minimal and deliberate — at most one cut mark, none by
-      default (§3.2)?
-- [ ] Full words — no abbreviations or shorthand, unless the user chose
-      that register (§3.4)?
-- [ ] Short for that language (§2 targets) — never padded to a count?
-- [ ] One **concrete** image (seen, heard, touched — or imagined to that
-      precision)?
-- [ ] A real **cut** — two planes in tension, no explanation of their link?
-- [ ] Room for **silence** — the poem works without being explained?
-- [ ] No moral, no conclusion, no displayed metaphor or simile?
-- [ ] Adjectives audited — each one changes the image or goes?
-- [ ] Season (if any) anchored in the **user's climate and cultural
-      calendar** — or honestly absent?
-- [ ] No pasted Japanese props (zen, torii, sakura...) unless the scene is
-      actually Japanese?
-- [ ] No title; no rhyme — **unless** the user's tradition or request says
-      otherwise (§5.3, §2)?
-- [ ] If the humor targets the human comedy: labeled senryū, honestly?
-- [ ] Read aloud in one breath?
+### A contemporary Western example — a French haiku
+> pluie d'août —
+> une feuille de tilleul collée
+> au carreau
 
-## 12. Assistant protocols
-
-**Precedence rule:** explicit user instructions on count, format, language,
-commentary, or number of poems override every default in this section.
-
-### "Is this a haiku?"
-Check against §11 in order: brevity → concrete image → cut → openness.
-Answer plainly: successful haiku / formally correct but weak (say why, one
-cause) / not a haiku but an aphorism, tanka, senryū... Never grade on 5-7-5
-compliance unless the user's stated frame is 5-7-5.
-
-### "Write me a haiku"
-- Offer **2 or 3 variants**, each followed by one line naming its choice
-  (where the cut falls, what the season anchor is, which one is bolder).
-- Start from a concrete image the user gives; if they give only an abstract
-  theme, ask for — or propose — one concrete scene first.
-- Apply beginner defaults by default; unlock advanced tools (§6) when the
-  user shows ambition or asks for depth.
-- If season matters and the user's hemisphere/climate is unknown, ask one
-  short question or stay season-neutral.
-
-### "Fix my haiku"
-Keep the strongest image; remove commentary, moral, forced punchline;
-strengthen the silence; lighten the language. If the corrected version drifts
-far from the original, also give a version closer to the user's intent and
-let them choose.
-
-### Special requests
-- **Strict 5-7-5 demanded** → comply well, note the denser alternative once,
-  drop it (§2).
-- **"Zen haiku"** → treat as tone (§6).
-- **A claimed national tradition** (Brazilian rhymed haicai, monostich, 4-line coda...) → follow it (§5.3).
-- **Southern-hemisphere or tropical user** → transpose or drop the season
-  (§5.2); never ship a Japan-calendar kigo by default.
+Why it works: summer kigo (August); one tiny detail (a single leaf stuck to
+the windowpane) carries the whole season; the human absence is present in
+the domestic detail; shorter than 5-7-5 (13 syllables), sayable in one
+breath.
 
 ## 13. Boundaries
 
-- Another genre explicitly wanted (tanka, senryū, sonnet, haibun) → follow
-  the user's intent.
+- Another genre explicitly wanted (tanka, sonnet, haibun) → follow the user's
+  intent. Senryū remains covered by this skill as a related form.
 - Non-natural subjects (technology, city, intimate feeling, history, war)
   are legitimate haiku material — do not refuse in the name of seasonal
-  "purity" (§6).
+  "purity" (§9).
 - Rigorous academic work: this skill is grounded in real scholarship (see
   Provenance) but is not a citation database; for sourced quotation-level
   claims, verify against the primary literature.
 
+## 14. Haiku as social commentary and activism
+
+While haiku is often associated with serene nature scenes, it has a long
+and growing tradition as a vehicle for protest, social critique, and bearing
+witness. From Vocance's 1916 *Cent visions de guerre* to the present, poets have
+used the form's compression to deliver sharp, unforgettable images of
+injustice.
+
+**Historical roots:** the *New Rising Haiku* movement (§9) was explicitly
+anti-militarist and socialist. Its poets were arrested, their journals
+shut down. They wrote about poverty, inequality, and the human cost of war.
+
+**Contemporary practice:** the Haiku Foundation's *Haiku Dialogue* runs
+regular monthly themes on social issues (poverty, racism, LGBTQ+ rights,
+human rights, climate crisis). The Haiku Society of America's Rengay Award
+first place in 2025 was "Current," a rengay about migrants and ICE
+detention. Academic studies (Salahaddin University, 2025) analyse haiku as
+critique of racial capitalism and post-war trauma.
+
+**Operational guidelines:**
+- When a user submits a haiku on a social issue, judge it by the same
+  criteria as any other haiku (§7). A good protest haiku still needs a cut,
+  concrete images, and silence — slogans are not haiku.
+- The form's compression is an asset for activism: a single image can carry
+  more charge than a paragraph. But the image must do the work, not the
+  poet's opinion.
+- Recognise that haiku of witness (war, displacement, grief) has its own
+  dignified tradition — do not soften or prettify it.
+
 ## Provenance
 
-Grounded in a 2026 multi-source study; every cultural and historical claim
-is traced to primary or scholarly sources: Haruo Shirane ("Beyond the Haiku
+Grounded in a 2026 multi-source research synthesis. The historical and
+cultural sections are informed by the following primary and scholarly sources;
+individual claims may require verification against the primary literature. Sources include Haruo Shirane ("Beyond the Haiku
 Moment", *Modern Haiku* 2000; *Traces of Dreams*, Stanford UP 1998); the
-Haiku Society of America's revised 2026 definitions; Higginson's metrical
+current Haiku Society of America usage; Higginson's metrical
 research (*Haiku Handbook* 1985; *Haiku World* 1996); the World Kigo
 Database and regional saijiki projects (Kenya, Australia, Taiwan); the
 francophone history (Couchoud 1905, AFH); Paz on the Hispanic tradition;
-Almeida's and Savary's own texts for Brazil; and a verified academic corpus
-of fifteen cross-cultural studies (2000-2026).
+Almeida's and Savary's own texts for Brazil; a verified academic corpus
+of fifteen cross-cultural studies (2000-2026); the *Gendai Haiku Saijiki*
+(Modern Haiku Association, Tokyo 2004); Clayton Beach's “Gendai Haiku: A Short History of the Modern Haiku”
+(*Modern Haiku* 50.2), which discusses the *New Rising Haiku* movement; the Haiku Foundation's
+*Haiku Dialogue* series on social issues; the critical anthology *African
+American Haiku: Cultural Visions*, ed. John Zheng (UP Mississippi, 2016);
+the *Taiwan Haiku Saijiki* of Huang Lingzhi; Chen Li's *Microcosmos* (1993; expanded edition 2006); and field research on haiku in Vietnam, Indonesia, and Albania
+via the World Haiku Association and Haikupedia (2001-2026).
+
