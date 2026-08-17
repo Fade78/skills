@@ -11,14 +11,14 @@ description: >
   tanka, or aphorism. High quality and trustworthy: built in 2026 on a serious, verified, scientific and
   multicultural study - Haruo Shirane's scholarship, current Haiku Society
   of America usage, Higginson's metrical research, and a source-audited
-  academic corpus spanning a dozen language traditions. It encodes what
-  transfers between cultures and what does not. CRITICAL: always compose in
-  the user's own language and script, and anchor any season in the user's
-  climate and cultural calendar, not Japan's.
+  academic corpus spanning a dozen language traditions. Unlike generic haiku
+  guides, it knows what transfers between cultures and what does not, so it
+  writes in the user's own language, script, climate, and cultural calendar
+  rather than through Japan's.
 metadata:
   tags: creative-writing, poetry, japanese, haiku, cross-cultural
   date: "2026-08-16"
-  version: "1.7.2"
+  version: "1.7.3"
   use_case: "Compose or critique haiku and related short forms across languages, traditions, and cultures."
 ---
 
