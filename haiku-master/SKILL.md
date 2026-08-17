@@ -1,18 +1,24 @@
 ---
 name: haiku-master
 description: >
-  Compose, improve, or judge haiku at a professional level beyond the
-  schoolroom 5-7-5 cliché. Use this skill for haiku, short Japanese-style or
-  three-line poems, 5-7-5 requests, and haiku-like texts submitted for review;
-  also for senryū, protest haiku, haiga, rengay, and advanced traditions such
-  as Japanese gendai, French war haiku, Brazilian rhymed haicai, Taiwanese
-  灣俳, and African-American haiku. Activate when the user asks for a very
-  short poem on a theme or confuses haiku with senryū, tanka, aphorism, or
-  another neighbouring form.
+  Compose, improve, or judge haiku at a professional level, far beyond the
+  schoolroom 5-7-5 cliché. Use this skill whenever the user asks for a haiku,
+  a short Japanese-style or three-line poem, mentions 5-7-5, submits a
+  haiku-like text for review, or wants a very short poem on a theme; also
+  for senryū, protest haiku, haiga, rengay, and traditions such as Japanese
+  gendai, French war haiku, Brazilian rhymed haicai, Taiwanese 灣俳, and
+  African-American haiku; and when the user confuses haiku with senryū,
+  tanka, or aphorism. High quality and trustworthy: built in 2026 on a serious, verified, scientific and
+  multicultural study - Haruo Shirane's scholarship, current Haiku Society
+  of America usage, Higginson's metrical research, and a source-audited
+  academic corpus spanning a dozen language traditions. It encodes what
+  transfers between cultures and what does not. CRITICAL: always compose in
+  the user's own language and script, and anchor any season in the user's
+  climate and cultural calendar, not Japan's.
 metadata:
   tags: creative-writing, poetry, japanese, haiku, cross-cultural
   date: "2026-08-16"
-  version: "1.7.1"
+  version: "1.7.2"
   use_case: "Compose or critique haiku and related short forms across languages, traditions, and cultures."
 ---
 
@@ -511,8 +517,9 @@ A-3, B-2, C-3, A-2, B-3, C-2
 
 **Operational rule:** when a user asks for a rengay, first confirm whether
 they are writing solo or with partners. If solo, write all six verses yourself
-in two alternating voices. The title should be a word or phrase from the poem,
-never a separate label.
+in two alternating voices. Give it a real title: per Garry Gay's own judging
+criteria, an interesting title is especially compelling when it does *not*
+echo a line from the first stanzas.
 
 ### 8.7 Related forms at a glance
 
@@ -648,8 +655,8 @@ Saitō Sanki ("a machine gun / in the forehead / the killing flower blooms")
 wrote surreal, war-haunted verse. After WWII the movement evolved into
 postwar *gendai*, which embraces everything from classical 5-7-5 with ironic
 kigo to free-verse surrealism. In 2004 the Modern Haiku Association published
-the *Muki Saijiki* (5 volumes), a season-word compendium that includes
-a dedicated "no-season" volume — recognising *muki* haiku as a legitimate
+the *Gendai Haiku Saijiki* (5 volumes), a season-word compendium that includes
+a dedicated no-season (*muki*) volume — recognising *muki* haiku as a legitimate
 category within Japan itself. Gendai is not a single style: it is the
 recognition that haiku can be modernist, avant-garde, personal, urban,
 and still be haiku.
@@ -829,7 +836,8 @@ rises from pure coincidence. *Shasei* at its best.
 
 ### A contemporary Western example — an English haiku
 > dandelion chain
-> I weave myself into the meadow
+> I weave myself
+> into the meadow
 > (Joshua St. Claire, HSA Haiku Award 2025, first place)
 
 Why it works: present tense; one continuous action (weaving) literal and
@@ -890,9 +898,8 @@ critique of racial capitalism and post-war trauma.
 
 ## Provenance
 
-Grounded in a 2026 multi-source research synthesis. The historical and
-cultural sections are informed by the following primary and scholarly sources;
-individual claims may require verification against the primary literature. Sources include Haruo Shirane ("Beyond the Haiku
+Grounded in a 2026 multi-source study; the cultural and historical claims
+were source-audited against primary or scholarly texts. Sources include Haruo Shirane ("Beyond the Haiku
 Moment", *Modern Haiku* 2000; *Traces of Dreams*, Stanford UP 1998); the
 current Haiku Society of America usage; Higginson's metrical
 research (*Haiku Handbook* 1985; *Haiku World* 1996); the World Kigo
@@ -906,4 +913,3 @@ of fifteen cross-cultural studies (2000-2026); the *Gendai Haiku Saijiki*
 American Haiku: Cultural Visions*, ed. John Zheng (UP Mississippi, 2016);
 the *Taiwan Haiku Saijiki* of Huang Lingzhi; Chen Li's *Microcosmos* (1993; expanded edition 2006); and field research on haiku in Vietnam, Indonesia, and Albania
 via the World Haiku Association and Haikupedia (2001-2026).
-
